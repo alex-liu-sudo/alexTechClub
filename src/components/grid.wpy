@@ -1,0 +1,47 @@
+<style>
+    .weui-grid {
+        width:25%
+    }
+</style>
+<template>
+    <!--<view class="page">-->
+        <!--<view class="page__bd">-->
+            <view class="weui-grids">
+                <!--<block wx:for="{{grids}}" wx:key="key">-->
+                    <!--<navigator url="" class="weui-grid" hover-class="weui-grid_active">-->
+                        <!--<image class="weui-grid__icon" src="../images/icon_tabbar.png" />-->
+                        <!--<view class="weui-grid__label">{{key}}</view>-->
+                    <!--</navigator>-->
+                <!--</block>-->
+
+                <repeat for="{{grids}}" key="index" index="index" item="item">
+                    <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                        <image class="weui-grid__icon" src="{{gridImgs[item]}}" />
+                        <view class="weui-grid__label">{{gridTitles[item]}}</view>
+                    </navigator>
+                </repeat>
+            </view>
+        <!--</view>-->
+    <!--</view>-->
+</template>
+
+<script>
+    import wepy from 'wepy';
+
+    export default class Grid extends wepy.page {
+        data = {
+            grids: [0, 1, 2, 3, 4 , 5 , 6,7],
+            gridTitles: ["php","安卓","ios","golang","java" ,"linux","区块链","敬请期待"],
+            gridImgs: [
+                "../images/grid/php.png",
+                "../images/grid/android.png",
+                "../images/grid/ios.png",
+                "../images/grid/golang.png",
+                "../images/grid/java.png" ,
+                "../images/grid/linux.png",
+                "../images/grid/blockchain.png",
+                "../images/grid/pending.png",
+            ],
+        }
+    }
+</script>

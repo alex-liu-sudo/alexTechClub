@@ -1,0 +1,41 @@
+<template>
+    <view class="page">
+       <slideshow>
+
+       </slideshow>
+       <grid>
+
+       </grid>
+        <notice>
+
+        </notice>
+        <navbar>
+
+        </navbar>
+
+
+    </view>
+
+</template>
+<script>
+    import wepy from 'wepy'
+    import SlideShow from '../components/slideshow' // 引入幻灯片组件
+    import Panel from '../components/panel'
+    import Grid from '../components/grid'
+    import Searchbar from '../components/searchbar'
+    import Navbar from '../components/navbar'
+    import Notice from '../components/notice'
+
+    export default class Index extends wepy.page {
+        components = {
+            slideshow : SlideShow,
+            panel : Panel,
+            grid : Grid,
+            searchbar:Searchbar,
+            navbar:Navbar,
+            notice:Notice,
+        }
+
+
+    }
+</script>

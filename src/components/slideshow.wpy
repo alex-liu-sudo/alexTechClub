@@ -1,0 +1,46 @@
+<style>
+    .slide-image {
+        width:100%;
+        height:150px;
+    }
+</style>
+<template>
+    <view class="slideshow">
+        <swiper indicator-dots="{{indicatorDots}}"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{imgUrls}}">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class SlideShow extends wepy.component {
+    data = {
+        imgUrls: [
+            'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+            'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+            'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'
+        ],
+        indicatorDots: true,
+        autoplay: true,
+        interval: 5000,
+        duration: 1000
+    }
+
+    events = {
+
+    }
+
+    methods = {
+
+    }
+
+    onLoad () {
+    }
+  }
+</script>
